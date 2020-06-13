@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>maven-java-starter</groupId>
+        <artifactId>maven-java-starter</artifactId>
+        <version>java11-1.0</version>
+    </parent>
+
+    <groupId>slf4j-ansi</groupId>
+    <artifactId>slf4j-ansi</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>SLF4J-Ansi</name>
+    <description></description>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/luiinge/slf4j-ansi/issues</url>
+    </issueManagement>
+
+
+    <properties>
+        <slf4j-api.version>1.7.30</slf4j-api.version>
+        <jansi.version>1.18</jansi.version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.fusesource.jansi</groupId>
+            <artifactId>jansi</artifactId>
+            <version>${jansi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
+
