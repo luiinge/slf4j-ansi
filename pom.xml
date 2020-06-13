@@ -42,5 +42,18 @@
         </dependency>
     </dependencies>
 
+
+    <!-- temporary, use github as maven repository -->
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://luiinge.github.io/maven-repo</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
 </project>
 
