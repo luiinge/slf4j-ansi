@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JAnsiSupport.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SLF4J-Ansi</a> &gt; <a href="index.source.html" class="el_package">slf4jansi.impl</a> &gt; <span class="el_source">JAnsiSupport.java</span></div><h1>JAnsiSupport.java</h1><pre class="source lang-java linenums">package slf4jansi.impl;
+
+import org.fusesource.jansi.Ansi;
+
+import slf4jansi.AnsiLogger;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+final class JAnsiSupport {
+
+<span class="fc" id="L15">    public static final JAnsiSupport instance = new JAnsiSupport();</span>
+<span class="fc" id="L16">    private static final Pattern globalStylePattern = Pattern.compile(&quot;^\\{!([^}]*)\\}.*&quot;);</span>
+<span class="fc" id="L17">    private static final Pattern stylePattern = Pattern.compile(&quot;\\{([^}]*)\\}&quot;);</span>
+
+    private Map&lt;String,String&gt; styles;
+
+<span class="fc" id="L21">    private JAnsiSupport() {</span>
+<span class="fc" id="L22">        AnsiLogger.addConfigurationChangeObserver(this::invalidateStyles);</span>
+<span class="fc" id="L23">    }</span>
+
+    private String replaceStyles(String globalStyle, String message) {
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (styles == null) {</span>
+<span class="fc" id="L27">            styles = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L28">            AnsiLogger.styles().forEach( (key, value) -&gt; styles.put(&quot;{&quot;+key+&quot;}&quot;,&quot;@|&quot;+value+&quot; {}|@&quot;));</span>
+        }
+<span class="fc" id="L30">        Matcher globalStyleMatcher = globalStylePattern.matcher(message);</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (globalStyleMatcher.matches()) {</span>
+<span class="fc" id="L32">            globalStyle = globalStyleMatcher.group(1);</span>
+<span class="fc" id="L33">            message = message.substring(message.indexOf('}')+1).trim();</span>
+        }
+<span class="fc" id="L35">        Matcher styleMatcher = stylePattern.matcher(message);</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        while (styleMatcher.find()) {</span>
+<span class="fc" id="L37">            String foundStyle = &quot;{&quot;+styleMatcher.group(1)+&quot;}&quot;;</span>
+<span class="fc" id="L38">            String style = styles.getOrDefault(foundStyle,&quot;{}&quot;);</span>
+<span class="fc" id="L39">            message = message.replace(foundStyle,style);</span>
+<span class="fc" id="L40">        }</span>
+
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        if (globalStyle != null) {</span>
+<span class="fc" id="L43">            globalStyle = AnsiLogger.styles().getProperty(globalStyle);</span>
+        }
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (globalStyle != null) {</span>
+<span class="fc" id="L46">            message = &quot;$|&quot;+message.replace(&quot;|@&quot;,&quot;|@$|&quot;).replace(&quot;@|&quot;,&quot;|$@|&quot;) + &quot;|$&quot;;</span>
+<span class="fc" id="L47">            message = message.replace(&quot;$|&quot;,&quot;@|&quot;+globalStyle+&quot; &quot;).replace(&quot;|$&quot;,&quot;|@&quot;);</span>
+        }
+<span class="fc" id="L49">        return message;</span>
+    }
+
+    private void invalidateStyles() {
+<span class="nc" id="L53">        this.styles = null;</span>
+<span class="nc" id="L54">    }</span>
+
+    String ansi(String level, String message) {
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        return message == null ? null : Ansi.ansi().render(replaceStyles(level, message)).toString();</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

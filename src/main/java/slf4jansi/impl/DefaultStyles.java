@@ -1,4 +1,4 @@
-package slf4jansi;
+package slf4jansi.impl;
 
 import java.util.Properties;
 
