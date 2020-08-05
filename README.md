@@ -15,6 +15,14 @@ required to change your code.
 
 Usage
 -----------------------------------------------------------------------------------------
+### Maven coordinates
+```xml
+<dependency>
+    <groupId>io.github.luiinge</groupId>
+    <artifactId>slf4j-ansi</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
 
 ### Quick start
 Just create an `AnsiLogger` wrapper around your Slf4J logger:
@@ -33,7 +41,7 @@ logger.warn("A timeout of {} seconds has ocurred requesting the resource {resour
 
 ### Defining custom styles
 
-If you desire to add/replace styles, you should configure `AnsiLogger` in some initializing method of your application, so that the styles are applied from the very beginning:
+If you want to add/replace styles, you should configure `AnsiLogger` in some initializing method of your application, so that the styles are applied from the very beginning:
 
 ```java
 public static void someInitializerMethod() {
@@ -137,10 +145,17 @@ Contributions
 -----------------------------------------------------------------------------------------
 If you want to contribute to this project, visit the
 [Github project](https://github.com/luiinge/slf4j-ansi). You can open a new issue / feature
-request, or make a pull request to consider. If your contribution is worthing, you will be added
+request, or make a pull request to consider. You will be added
 as a contributor in this very page.
 
-
+Issue reporting
+-----------------------------------------------------------------------------------------
+If you have found any defect in this software, please report it 
+in [Github project Issues](https://github.com/luiinge/slf4j-ansi/issues). 
+There is no guarantee that it would be fixed in the following version but it would 
+be addressed as soon as possible.   
+ 
+  
 
 License
 -----------------------------------------------------------------------------------------

@@ -4,31 +4,42 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>maven-java-starter</groupId>
-        <artifactId>maven-java11-starter</artifactId>
-        <version>1.0.0</version>
+        <groupId>io.github.luiinge</groupId>
+        <artifactId>maven-java-starter</artifactId>
+        <version>11.0.0</version>
     </parent>
 
-    <groupId>slf4j-ansi</groupId>
+    <groupId>io.github.luiinge</groupId>
     <artifactId>slf4j-ansi</artifactId>
     <version>1.0.0</version>
 
     <name>SLF4J-Ansi</name>
     <description>Use Ansi styles in SLF4J logger messages</description>
+    <url>https://github.com/luiinge/slf4j-ansi</url>
 
+    <organization>
+        <name>luiinge</name>
+        <url>https://github.com/luiinge</url>
+    </organization>
 
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://repository.jboss.org/licenses/mit.txt</url>
-        </license>
-    </licenses>
-
+    <developers>
+        <developer>
+            <name>Luis Iñesta Gelabert</name>
+            <email>luiinge@gmail.com</email>
+        </developer>
+    </developers>
 
     <issueManagement>
         <system>Github</system>
         <url>https://github.com/luiinge/slf4j-ansi/issues</url>
     </issueManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com/luiinge/slf4j-ansi.git</connection>
+        <developerConnection>scm:git:ssh://github.com:luiinge/slf4j-ansi.git</developerConnection>
+        <url>https://github.com/luiinge/slf4j-ansi/tree/master</url>
+    </scm>
+
 
 
     <properties>
@@ -50,18 +61,6 @@
         </dependency>
     </dependencies>
 
-
-    <!-- temporary, use github as maven repository -->
-    <repositories>
-        <repository>
-            <id>github</id>
-            <url>https://luiinge.github.io/maven-repo</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
 
 </project>
 
