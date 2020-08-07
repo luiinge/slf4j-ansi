@@ -6,6 +6,15 @@ SLF4J Ansi
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/luiinge/slf4j-ansi/Test/master?style=plastic)
 ![Maven Central](https://img.shields.io/maven-central/v/io.github.luiinge/slf4j-ansi?style=plastic)
 
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=alert_status)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=ncloc)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=bugs)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=code_smells)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=sqale_index)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
+
+
 This tool enhances the [*Simple Logging Facade for Java*][1] library with the capability of
 formatting parameters using [ANSI escape codes][2], which are defined as *styles* using
 the [Jansi][3] library. In addition, overall styles can be defined for each logging level (`ERROR`,
