@@ -3,7 +3,8 @@ SLF4J Ansi
 ================================================================================
 ![GitHub](https://img.shields.io/github/license/luiinge/slf4j-ansi?style=plastic)
 [![JaCoCo](https://img.shields.io/badge/dynamic/xml?style=plastic&label=coverage&query=floor%28%28%2Freport%2Fcounter%5B%40type%3D%27INSTRUCTION%27%5D%2F%40covered%29div%28%20%2Freport%2Fcounter%5B%40type%3D%27INSTRUCTION%27%5D%2F%40covered%20%2B%20%2Freport%2Fcounter%5B%40type%3D%27INSTRUCTION%27%5D%2F%40missed%20%29%2A100%29&suffix=%20%25&url=https%3A%2F%2Fraw.githubusercontent.com%2Fluiinge%2Fslf4j-ansi%2Fmaster%2Fdocs%2Fcoverage%2Fjacoco.xml)](https://luiinge.github.io/slf4j-ansi/coverage)
-
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/luiinge/slf4j-ansi/Test/master?style=plastic)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.luiinge/slf4j-ansi?style=plastic)
 
 This tool enhances the [*Simple Logging Facade for Java*][1] library with the capability of
 formatting parameters using [ANSI escape codes][2], which are defined as *styles* using
