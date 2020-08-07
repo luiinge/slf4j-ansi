@@ -11,7 +11,7 @@
 
     <groupId>io.github.luiinge</groupId>
     <artifactId>slf4j-ansi</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>SLF4J-Ansi</name>
     <description>Use Ansi styles in SLF4J logger messages</description>

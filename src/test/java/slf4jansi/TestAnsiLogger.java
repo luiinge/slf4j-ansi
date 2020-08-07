@@ -1,13 +1,9 @@
 package slf4jansi;
 
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import java.util.Properties;
-
 import org.junit.Test;
 import org.slf4j.Logger;
-
-import slf4jansi.AnsiLogger;
 
 public class TestAnsiLogger {
 
@@ -28,13 +24,13 @@ public class TestAnsiLogger {
         logger.info("{!important} this is a nice URI: {uri} , and this: {id} a beautiful id", "http://world.org", 54423);
         logger.error("{!important} this is a nice URI: {uri} , and this: {id} a beautiful id", "http://world.org", 54423);
         System.out.println(string.getContent());
-        assertTrue(string.getContent().equals(
+        assertEquals(string.getContent(),
            "this is a nice URI: [34;4mhttp://world.org[m , and this: [36;1m54423[m a beautiful id\n"+
             "[33;1mthis is a nice URI: [m[34;4mhttp://world.org[m[33;1m , and this: [m[36;1m54423[m[33;1m a beautiful id[m\n"+
             "[31;1mthis is a nice URI: [m[34;4mhttp://world.org[m[31;1m , and this: [m[36;1m54423[m[31;1m a beautiful id[m\n"+
             "[35;1mthis is a nice URI: [m[34;4mhttp://world.org[m[35;1m , and this: [m[36;1m54423[m[35;1m a beautiful id[m\n"+
             "[35;1mthis is a nice URI: [m[34;4mhttp://world.org[m[35;1m , and this: [m[36;1m54423[m[35;1m a beautiful id[m\n"
-        ));
+        );
     }
 
     @Test
@@ -44,7 +40,7 @@ public class TestAnsiLogger {
         Logger logger = AnsiLogger.of(string);
         logger.info("{error} regular {uri}","red","blue");
         System.out.println(string.getContent());
-        assertTrue(string.getContent().equals("red regular blue\n"));
+        assertEquals(string.getContent(),"red regular blue\n");
     }
 
 
@@ -55,7 +51,7 @@ public class TestAnsiLogger {
         Logger logger = AnsiLogger.of(string);
         logger.info(null);
         System.out.println(string.getContent());
-        assertTrue(string.getContent().equals("null\n"));
+        assertEquals(string.getContent(),"null\n");
     }
 
 

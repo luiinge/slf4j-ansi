@@ -5,6 +5,13 @@ import java.util.Properties;
 
 public class DefaultStyles {
 
+
+    private DefaultStyles() {
+        /*avoid instantiation*/
+    }
+
+
+
     public static Properties asProperties() {
         Properties styles = new Properties();
         styles.put("error","red,bold");

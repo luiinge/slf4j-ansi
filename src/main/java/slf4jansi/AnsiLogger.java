@@ -3,17 +3,15 @@
  */
 package slf4jansi;
 
-import org.fusesource.jansi.Ansi;
-import org.slf4j.Logger;
-import org.slf4j.spi.LocationAwareLogger;
-
-import slf4jansi.impl.DefaultStyles;
-import slf4jansi.impl.LocationAwareAnsiLogger;
-import slf4jansi.impl.SimpleAnsiLogger;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import org.fusesource.jansi.Ansi;
+import org.slf4j.Logger;
+import org.slf4j.spi.LocationAwareLogger;
+import slf4jansi.impl.DefaultStyles;
+import slf4jansi.impl.LocationAwareAnsiLogger;
+import slf4jansi.impl.SimpleAnsiLogger;
 
 /**
  * This class is the entry point for obtaining Ansi-enchanced {@link Logger} instances,
@@ -23,6 +21,11 @@ public class AnsiLogger {
 
     private static Properties styles = DefaultStyles.asProperties();
     private static List<Runnable> configurationChangeObservers = new ArrayList<>();
+
+
+    private AnsiLogger() {
+        /*avoid instantiation*/
+    }
 
 
     /**
