@@ -2,13 +2,13 @@
 SLF4J Ansi
 ================================================================================
 ![GitHub](https://img.shields.io/github/license/luiinge/slf4j-ansi?style=plastic)
-[![JaCoCo](https://img.shields.io/badge/dynamic/xml?style=plastic&label=coverage&query=floor%28%28%2Freport%2Fcounter%5B%40type%3D%27INSTRUCTION%27%5D%2F%40covered%29div%28%20%2Freport%2Fcounter%5B%40type%3D%27INSTRUCTION%27%5D%2F%40covered%20%2B%20%2Freport%2Fcounter%5B%40type%3D%27INSTRUCTION%27%5D%2F%40missed%20%29%2A100%29&suffix=%20%25&url=https%3A%2F%2Fraw.githubusercontent.com%2Fluiinge%2Fslf4j-ansi%2Fmaster%2Fdocs%2Fcoverage%2Fjacoco.xml)](https://luiinge.github.io/slf4j-ansi/coverage)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/luiinge/slf4j-ansi/Test/master?style=plastic)
 ![Maven Central](https://img.shields.io/maven-central/v/io.github.luiinge/slf4j-ansi?style=plastic)
 
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=alert_status)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=ncloc)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=coverage)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=bugs)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=code_smells)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=luiinge_slf4j-ansi&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=luiinge_slf4j-ansi)
