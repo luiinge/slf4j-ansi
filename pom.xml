@@ -44,7 +44,7 @@
 
     <properties>
         <slf4j-api.version>1.7.30</slf4j-api.version>
-        <jansi.version>1.18</jansi.version>
+        <jansi.version>2.1.0</jansi.version>
     </properties>
 
 
